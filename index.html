@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Blockchain Simple</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Librería de Hash SHA256 desde CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script src="blockchain.js" defer></script>
+</head>
+<body>
+  <h1>- Proyecto Blockchain en HTML/JS -</h1>
+
+  <!-- 🔹 Controles de usuario -->
+  <div class="user-controls">
+    <button onclick="loginAdmin()">🔒 Administrador</button>
+    <button onclick="loginInvitado()">🐧 Invitado</button>
+  </div>
+  <p id="currentUser">Usuario actual: <b>Invitado</b></p>
+
+  <div class="container">
+    <input type="text" id="dataInput" placeholder="Ingresa datos para el bloque...">
+    <button type="button" onclick="agregarBloque()">❇️ Agregar Bloque</button>
+    <button type="button" onclick="mostrarCadena()">✳️ Mostrar Blockchain</button>
+    <button type="button" onclick="verificarCadena()">✅ Verificar Cadena</button>
+  </div>
+  <div id="output"></div>
+    <button class="hack-btn" onclick="alterarCadena()">💀 Alterar Cadena</button>
+    <button class="clear-btn" onclick="limpiarCadena()">🗑️ Limpiar Cadena</button>
+</body>
+</html>
