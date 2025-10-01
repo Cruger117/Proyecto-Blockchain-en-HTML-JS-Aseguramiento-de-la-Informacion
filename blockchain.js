@@ -56,23 +56,20 @@ let myBlockchain = new Blockchain();
 // 🔹 Usuario actual
 let currentUser = "Invitado";
 
-// 🔑 Login como administrador
-function loginAdmin() {
-  const pass = prompt("Introduce la contraseña de Administrador:");
-  if (pass === "12345") {
-    currentUser = "Administrador";
-    document.getElementById("currentUser").innerHTML = "Usuario actual: <b>Administrador</b>";
-    alert("✅ Sesión iniciada como Administrador");
-  } else {
-    alert("❌ Contraseña incorrecta");
-  }
-}
+// 👤 Establecer usuario
+function establecerUsuario() {
+  const input = document.getElementById("userInput");
+  const usuario = input.value.trim();
 
-// 🙋 Login como invitado
-function loginInvitado() {
-  currentUser = "Invitado";
-  document.getElementById("currentUser").innerHTML = "Usuario actual: <b>Invitado</b>";
-  alert("Sesión iniciada como Invitado");
+  if (!usuario) {
+    alert("⚠️ Por favor ingresa un nombre de usuario.");
+    return;
+  }
+
+  currentUser = usuario;
+  document.getElementById("currentUser").innerHTML = "Usuario actual: <b>" + currentUser + "</b>";
+  alert("✅ Usuario establecido: " + currentUser);
+  input.value = "";
 }
 
 // ➕ Agregar bloque con usuario activo
@@ -113,7 +110,7 @@ function mostrarCadena() {
 function verificarCadena() {
   const output = document.getElementById("output");
   if (myBlockchain.isChainValid()) {
-    output.innerHTML = "<h2 class='valido'>✔ La cadena es válida</h2>";
+    output.innerHTML = "<h2 class='valido'>✓ La cadena es válida</h2>";
   } else {
     output.innerHTML = "<h2 class='invalido'>✖ La cadena fue alterada</h2>";
   }
