@@ -9,23 +9,30 @@
   <script src="blockchain.js" defer></script>
 </head>
 <body>
-  <h1>- Proyecto Blockchain en HTML/JS -</h1>
+  <h1>⫘⫘ Proyecto Blockchain HTML/JS ⫘⫘</h1>
 
-  <!-- 🔹 Controles de usuario -->
-  <div class="user-controls">
-    <button onclick="loginAdmin()">🔒 Administrador</button>
-    <button onclick="loginInvitado()">🐧 Invitado</button>
+  <!-- 🔹 Configuración de usuario -->
+  <div class="user-setup">
+    <input type="text" id="userInput" placeholder="Ingresa tu nombre de usuario...">
+    <button onclick="establecerUsuario()">👤 Establecer Usuario</button>
   </div>
-  <p id="currentUser">Usuario actual: <b>Invitado</b></p>
 
   <div class="container">
+    <p id="currentUser">Usuario actual: <b>Invitado</b></p>
+    
     <input type="text" id="dataInput" placeholder="Ingresa datos para el bloque...">
-    <button type="button" onclick="agregarBloque()">❇️ Agregar Bloque</button>
-    <button type="button" onclick="mostrarCadena()">✳️ Mostrar Blockchain</button>
-    <button type="button" onclick="verificarCadena()">✅ Verificar Cadena</button>
+    
+    <div class="button-row">
+      <button type="button" onclick="agregarBloque()">❇️ Agregar Bloque</button>
+      <button type="button" onclick="mostrarCadena()">✳️ Mostrar Blockchain</button>
+      <button type="button" onclick="verificarCadena()">✅ Verificar Cadena</button>
+    </div>
+    
+    <div class="button-row">
+      <button class="hack-btn-inline" onclick="alterarCadena()">💀 Alterar Cadena</button>
+      <button class="clear-btn-inline" onclick="limpiarCadena()">🗑️ Limpiar Cadena</button>
+    </div>
   </div>
   <div id="output"></div>
-    <button class="hack-btn" onclick="alterarCadena()">💀 Alterar Cadena</button>
-    <button class="clear-btn" onclick="limpiarCadena()">🗑️ Limpiar Cadena</button>
 </body>
 </html>
